@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventura de Athena</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-200 flex items-center justify-center min-h-screen">
+
+<div class="bg-white rounded-lg shadow-lg overflow-hidden grid grid-cols-1 md:grid-cols-2 max-w-4xl w-full">
+
+    <!-- LADO ESQUERDO -->
+    <div class="bg-blue-100 p-8 flex flex-col justify-center text-center">
+        <h1 class="text-2xl font-bold mb-2">Salve Athena</h1>
+        <p class="mb-4">Use seu cosmo com sabedoria.</p>
+
+        <ul class="text-sm space-y-1">
+            <li>• Sacrifício dobra o cosmo</li>
+            <li>• Dano fixo de 200</li>
+            <li>• Objetivo: cosmo ≥ 1000</li>
+        </ul>
+    </div>
+
+    <!-- LADO DIREITO -->
+    <div class="p-8">
+
+        <form onsubmit="event.preventDefault(); iniciar();">
+
+            <label class="block mb-1">Nome</label>
+            <input type="text" id="nome"
+                class="w-full border-2 border-gray-400 rounded-md p-2 bg-white text-black mb-4"
+                placeholder="Digite seu nome">
+
+            <label class="block mb-1">Cosmo</label>
+            <input type="number" id="cosmo"
+                class="w-full border-2 border-gray-400 rounded-md p-2 bg-white text-black mb-4"
+                placeholder="Digite seu cosmo">
+
+            <div class="flex justify-between items-center">
+                <button type="submit"
+                    class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                    Iniciar
+                </button>
+
+                <button type="button" onclick="resetForm()" class="text-gray-600">
+                    Resetar
+                </button>
+            </div>
+
+        </form>
+
+        <div id="resultado" class="mt-6 p-4 rounded hidden"></div>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
